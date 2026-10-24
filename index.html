@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMITYS PERFUME | Luxury & Beauty</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --black: #101010;
+    --gold: #c6a56b;
+    --lightgold: #e5d0a7;
+    --cream: #faf7f0;
+    --white: #fff;
+    --muted: #777168;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--black);
+}
+
+button, input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+.announcement {
+    padding: 11px;
+    background: var(--black);
+    color: var(--lightgold);
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,240,.97);
+    border-bottom: 1px solid #e4d8c2;
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.logo small {
+    display: block;
+    margin-top: 4px;
+    color: #947443;
+    font: 700 9px "DM Sans", sans-serif;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #a17b3d;
+}
+
+.bag-button {
+    padding: 12px 17px;
+    border: 1px solid var(--gold);
+    background: var(--black);
+    color: var(--lightgold);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero {
+    min-height: 570px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    padding: 65px 0;
+}
+
+.eyebrow {
+    color: #967444;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 20px 0;
+    font: 400 clamp(45px, 6vw, 78px)/1.08 "Playfair Display", serif;
+}
+
+.hero h1 span {
+    color: #a98449;
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 450px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.primary-button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 17px 25px;
+    border: 1px solid var(--black);
+    background: var(--black);
+    color: var(--lightgold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.primary-button:hover {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0e9dc;
+    border: 1px solid #e4d6bd;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gold-strip {
+    padding: 25px 15px;
+    background: var(--black);
+    color: var(--lightgold);
+    text-align: center;
+    font: 22px "Playfair Display", serif;
+    letter-spacing: 2px;
+}
+
+section.collection {
+    padding: 95px 0;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+    font: 400 clamp(35px, 5vw, 54px) "Playfair Display", serif;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 38px 25px;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-image {
+    height: 330px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0ebe1;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding-top: 19px;
+}
+
+.category {
+    color: #987747;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.product-info h3 {
+    margin: 10px 0;
+    font: 24px "Playfair Display", serif;
+}
+
+.description {
+    min-height: 40px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.price {
+    margin-top: 12px;
+    font: 24px "Playfair Display", serif;
+    font-weight: 700;
+}
+
+.add-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--gold);
+    background: var(--black);
+    color: var(--lightgold);
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: .25s;
+}
+
+.add-button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.add-button span {
+    font-size: 20px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 90px 5%;
+    background: var(--black);
+    color: var(--cream);
+}
+
+.about-image {
+    height: 360px;
+    background: #211e18;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about h2 {
+    margin: 18px 0;
+    font: 42px "Playfair Display", serif;
+}
+
+.about p {
+    color: #c5beb2;
+    font-size: 13px;
+    line-height: 2;
+}
+
+footer {
+    padding: 45px 0 25px;
+    background: #080808;
+    color: var(--cream);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+footer p {
+    margin-top: 12px;
+    color: #aaa197;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--lightgold);
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 10px;
+}
+
+/* SHOPPING BAG */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,.65);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bag-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 201;
+    width: min(430px, 100%);
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background: var(--black);
+    color: var(--cream);
+    border-left: 1px solid var(--gold);
+    transform: translateX(105%);
+    transition: transform .3s;
+}
+
+.bag-panel.open {
+    transform: translateX(0);
+}
+
+.bag-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #51432c;
+}
+
+.bag-header h2 {
+    color: var(--lightgold);
+    font: 29px "Playfair Display", serif;
+}
+
+.close-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--lightgold);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#bag-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 0;
+}
+
+.empty-message {
+    padding: 25px 0;
+    color: #c7bfb2;
+    line-height: 1.8;
+}
+
+.bag-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #383128;
+}
+
+.bag-item h4 {
+    margin-bottom: 7px;
+    color: var(--lightgold);
+    font: 19px "Playfair Display", serif;
+}
+
+.bag-item p {
+    color: #ccc3b5;
+    font-size: 13px;
+}
+
+.bag-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.bag-controls button {
+    min-width: 32px;
+    padding: 7px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--lightgold);
+    cursor: pointer;
+}
+
+.bag-controls button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.bag-footer {
+    padding-top: 20px;
+    border-top: 1px solid #51432c;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 17px;
+    border: 0;
+    background: var(--gold);
+    color: var(--black);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.checkout-button:hover {
+    background: var(--lightgold);
+}
+
+.checkout-button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 45px 0;
+    }
+
+    .hero-image {
+        height: 340px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
+    }
+
+    .product-image {
+        height: clamp(180px, 42vw, 280px);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 60px 5%;
+    }
+
+    section.collection {
+        padding: 65px 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+    LUXURY IN EVERY DETAIL — WELCOME TO AMITYS
+</div>
+
+<header>
+    <div class="container navbar">
+        <a href="#home" class="logo">
+            AMITYS
+            <small>PERFUMES & BEAUTY</small>
+        </a>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#collection">COLLECTION</a>
+            <a href="#about">ABOUT US</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+
+        <button class="bag-button" onclick="openBag()">
+            MY BAG (<span id="bag-count">0</span>)
+        </button>
+    </div>
+</header>
+
+<main>
+<section class="container hero" id="home">
+    <div>
+        <span class="eyebrow">DISCOVER YOUR SIGNATURE</span>
+
+        <h1>
+            Luxury that<br>
+            <span>stays with you.</span>
+        </h1>
+
+        <p>
+            Discover fragrances and beauty essentials designed to
+            make every moment feel special. Find your favourite
+            scent and make it part of your identity.
+        </p>
+
+        <a href="#collection" class="primary-button">
+            EXPLORE OUR COLLECTION ↗
+        </a>
+    </div>
+
+    <div class="hero-image">
+        <img src="amity coverpage.jpeg"
+             alt="AMITYS Perfume luxury collection">
+    </div>
+</section>
+
+<div class="gold-strip">
+    YOUR SCENT. YOUR STATEMENT. YOUR AMITYS.
+</div>
+
+<section class="collection" id="collection">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">THE AMITYS COLLECTION</span>
+            <h2>Find your favourite.</h2>
+            <p>
+                Thoughtfully selected fragrances and everyday
+                essentials to elevate your routine.
+            </p>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="amity perfume.jpeg" alt="Perfume"
+                         loading="lazy">
+                </div>
+
+                <div class="product-info">
+                    <span class="category">SIGNATURE FRAGRANCE</span>
+                    <h3>Perfume</h3>
+                    <p class="description">
+                        Discover a fragrance that expresses your
+                        personality and leaves a lasting impression.
+                    </p>
+                    <p class="price">R200.00</p>
+
+                    <button class="add-button"
+                        onclick="addToBag('Perfume', 200)">
+                        ADD TO BAG <span>+</span>
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="amity rollon.jpeg" alt="Roll-On"
+                         loading="lazy">
+                </div>
+
+                <div class="product-info">
+                    <span class="category">EVERYDAY ESSENTIAL</span>
+                    <h3>Roll-On</h3>
+                    <p class="description">
+                        A convenient everyday essential for your
+                        personal care routine.
+                    </p>
+                    <p class="price">R50.00</p>
+
+                    <button class="add-button"
+                        onclick="addToBag('Roll-On', 50)">
+                        ADD TO BAG <span>+</span>
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="amity skincare.jpeg" alt="Skincare"
+                         loading="lazy">
+                </div>
+
+                <div class="product-info">
+                    <span class="category">BEAUTY & CARE</span>
+                    <h3>Skincare</h3>
+                    <p class="description">
+                        Add a little extra care to your daily
+                        skincare routine.
+                    </p>
+                    <p class="price">R120.00</p>
+
+                    <button class="add-button"
+                        onclick="addToBag('Skincare', 120)">
+                        ADD TO BAG <span>+</span>
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="amity car scent.jpeg" alt="Car Scent"
+                         loading="lazy">
+                </div>
+
+                <div class="product-info">
+                    <span class="category">FRESHEN YOUR SPACE</span>
+                    <h3>Car Scent</h3>
+                    <p class="description">
+                        Bring a fresh fragrance to your everyday
+                        journeys.
+                    </p>
+                    <p class="price">R70.00</p>
+
+                    <button class="add-button"
+                        onclick="addToBag('Car Scent', 70)">
+                        ADD TO BAG <span>+</span>
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="amity heel balm.jpeg" alt="Heel Balm"
+                         loading="lazy">
+                </div>
+
+                <div class="product-info">
+                    <span class="category">PERSONAL CARE</span>
+                    <h3>Heel Balm</h3>
+                    <p class="description">
+                        An everyday care essential for your
+                        foot-care routine.
+                    </p>
+                    <p class="price">R120.00</p>
+
+                    <button class="add-button"
+                        onclick="addToBag('Heel Balm', 120)">
+                        ADD TO BAG <span>+</span>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-image">
+        <img src="amity coverpage.jpeg"
+             alt="AMITYS fragrance and beauty">
+    </div>
+
+    <div>
+        <span class="eyebrow">THE AMITYS EXPERIENCE</span>
+
+        <h2>Beauty in every detail.</h2>
+
+        <p>
+            AMITYS brings together fragrance and personal-care
+            essentials for people who appreciate the little
+            details. Whether you're choosing a signature perfume
+            or an everyday essential, we're here to help you
+            find something you'll love.
+        </p>
+
+        <a href="#collection" class="primary-button">
+            DISCOVER THE COLLECTION ↗
+        </a>
+    </div>
+</section>
+
+<section class="collection" id="contact">
+    <div class="container" style="text-align:center">
+        <span class="eyebrow">WE'RE HERE TO HELP</span>
+
+        <div class="section-heading">
+            <h2>Let's connect.</h2>
+            <p style="margin:auto">
+                Have a question about a product or your order?
+                Get in touch with AMITYS.
+            </p>
+        </div>
+
+        <a class="primary-button"
+           href="https://wa.me/27642084489"
+           target="_blank" rel="noopener">
+            CHAT WITH US ON WHATSAPP ↗
+        </a>
+
+        <br>
+
+        <a class="primary-button"
+           href="mailto:rosemaryruvengo29@gmail.com">
+            SEND US AN EMAIL ↗
+        </a>
+    </div>
+</section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="logo">
+                AMITYS
+                <small>PERFUMES & BEAUTY</small>
+            </div>
+
+            <div>
+                <p>Luxury, fragrance and everyday essentials.</p>
+                <p>
+                    Email:
+                    <a href="mailto:rosemaryruvengo29@gmail.com">
+                        rosemaryruvengo29@gmail.com
+                    </a>
+                </p>
+                <p>
+                    WhatsApp:
+                    <a href="https://wa.me/27642084489"
+                       target="_blank" rel="noopener">
+                        064 208 4489
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <p class="copyright">
+            &copy; <span id="year"></span> AMITYS PERFUME.
+            All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- SHOPPING BAG -->
+<div class="overlay" id="bag-overlay" onclick="closeBag()"></div>
+
+<aside class="bag-panel" id="bag-panel"
+       aria-label="Your shopping bag">
+
+    <div class="bag-header">
+        <h2>Your Bag</h2>
+        <button class="close-button"
+                onclick="closeBag()"
+                aria-label="Close shopping bag">&times;</button>
+    </div>
+
+    <div id="bag-items"></div>
+
+    <div class="bag-footer">
+        <div class="total-row">
+            <span>Subtotal</span>
+            <span id="bag-total">R0.00</span>
+        </div>
+
+        <button class="checkout-button"
+                id="checkout-button"
+                onclick="goToCheckout()"
+                disabled>
+            PROCEED TO CHECKOUT →
+        </button>
+
+        <p style="margin-top:12px;color:#bcb2a1;font-size:11px;line-height:1.7">
+            Delivery charges, availability and final order
+            confirmation will be discussed with AMITYS.
+        </p>
+    </div>
+</aside>
+
+<script>
+const CART_KEY = "amitysPerfumeCart";
+
+let cart = [];
+
+try {
+    cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+} catch (error) {
+    cart = [];
+}
+
+function saveCart() {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function money(amount) {
+    return "R" + Number(amount).toFixed(2);
+}
+
+function addToBag(name, price) {
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    saveCart();
+    renderBag();
+    openBag();
+}
+
+function changeQuantity(name, change) {
+    const item = cart.find(product => product.name === name);
+
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        cart = cart.filter(product => product.name !== name);
+    }
+
+    saveCart();
+    renderBag();
+}
+
+function removeItem(name) {
+    cart = cart.filter(item => item.name !== name);
+    saveCart();
+    renderBag();
+}
+
+function renderBag() {
+    const itemsBox = document.getElementById("bag-items");
+    const countBox = document.getElementById("bag-count");
+    const totalBox = document.getElementById("bag-total");
+    const checkoutButton = document.getElementById("checkout-button");
+
+    const itemCount = cart.reduce(
+        (total, item) => total + item.quantity, 0
+    );
+
+    const subtotal = cart.reduce(
+        (total, item) => total + item.price * item.quantity, 0
+    );
+
+    countBox.textContent = itemCount;
+    totalBox.textContent = money(subtotal);
+    checkoutButton.disabled = cart.length === 0;
+
+    if (cart.length === 0) {
+        itemsBox.innerHTML = `
+            <p class="empty-message">
+                Your bag is waiting for something special.<br><br>
+                Explore our collection and add your favourites.
+            </p>
+        `;
+        return;
+    }
+
+    itemsBox.innerHTML = cart.map(item => `
+        <div class="bag-item">
+            <h4>${escapeHTML(item.name)}</h4>
+            <p>${money(item.price)} each</p>
+            <p style="margin-top:7px">
+                Total: ${money(item.price * item.quantity)}
+            </p>
+
+            <div class="bag-controls">
+                <button onclick="changeQuantity('${escapeJS(item.name)}', -1)"
+                        aria-label="Decrease quantity">−</button>
+
+                <span>${item.quantity}</span>
+
+                <button onclick="changeQuantity('${escapeJS(item.name)}', 1)"
+                        aria-label="Increase quantity">+</button>
+
+                <button onclick="removeItem('${escapeJS(item.name)}')">
+                    Remove
+                </button>
+            </div>
+        </div>
+    `).join("");
+}
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[character]);
+}
+
+function escapeJS(value) {
+    return String(value).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+}
+
+function openBag() {
+    document.getElementById("bag-panel").classList.add("open");
+    document.getElementById("bag-overlay").classList.add("open");
+    document.body.style.overflow = "hidden";
+}
+
+function closeBag() {
+    document.getElementById("bag-panel").classList.remove("open");
+    document.getElementById("bag-overlay").classList.remove("open");
+    document.body.style.overflow = "";
+}
+
+function goToCheckout() {
+    if (cart.length === 0) return;
+
+    window.location.href = "checkout.html";
+}
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeBag();
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderBag();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | AMITYS PERFUME</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --black: #101010;
+    --gold: #c6a56b;
+    --lightgold: #e5d0a7;
+    --cream: #faf7f0;
+    --muted: #777168;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(850px, 92%);
+    margin: auto;
+}
+
+.announcement {
+    padding: 11px;
+    background: var(--black);
+    color: var(--lightgold);
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+header {
+    padding: 20px 0;
+    background: var(--black);
+    color: var(--cream);
+    border-bottom: 1px solid var(--gold);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font: 700 28px "Playfair Display", serif;
+    letter-spacing: 4px;
+}
+
+.logo small {
+    display: block;
+    margin-top: 5px;
+    color: var(--lightgold);
+    font: 700 9px "DM Sans", sans-serif;
+    letter-spacing: 2px;
+}
+
+.back-link {
+    padding: 13px 15px;
+    border: 1px solid var(--gold);
+    color: var(--lightgold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+main {
+    padding: 65px 0 85px;
+}
+
+.heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #987747;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.heading h1 {
+    margin: 13px 0;
+    font: 45px "Playfair Display", serif;
+}
+
+.heading p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+form {
+    padding: clamp(20px, 5vw, 40px);
+    background: white;
+    border: 1px solid #e4d6bd;
+    box-shadow: 0 15px 45px rgba(0,0,0,.05);
+}
+
+h2 {
+    margin: 28px 0 18px;
+    font: 25px "Playfair Display", serif;
+}
+
+h2:first-child {
+    margin-top: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    border: 1px solid #d8d0c2;
+    background: white;
+    color: var(--black);
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #d8d0c2;
+    cursor: pointer;
+}
+
+.choice input {
+    width: auto;
+    min-height: auto;
+    margin-top: 3px;
+    accent-color: #987747;
+}
+
+.choice strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.choice small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+#delivery-fields {
+    margin-top: 25px;
+}
+
+.notice {
+    margin: 22px 0;
+    padding: 16px;
+    background: #fbf6ec;
+    border-left: 3px solid var(--gold);
+    color: #655b4b;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.summary {
+    margin: 25px 0;
+    padding: 20px;
+    background: var(--cream);
+}
+
+.summary h2 {
+    margin-top: 0;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e4d8c2;
+    font-size: 13px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 18px;
+    font-weight: 700;
+}
+
+.small-note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.actions button {
+    min-height: 54px;
+    padding: 14px;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.whatsapp {
+    background: #176b42;
+    color: white;
+}
+
+.email {
+    background: var(--black);
+    color: var(--lightgold);
+}
+
+.actions button:hover {
+    opacity: .85;
+}
+
+#status {
+    margin-top: 15px;
+    color: #72592f;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 30px 0;
+    background: var(--black);
+    color: var(--lightgold);
+    text-align: center;
+    font-size: 11px;
+    line-height: 2;
+}
+
+@media(max-width: 560px) {
+    .grid, .choices, .actions {
+        grid-template-columns: 1fr;
+    }
+
+    .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .heading h1 {
+        font-size: 37px;
+    }
+
+    main {
+        padding: 45px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+    AMITYS PERFUME — YOUR ORDER, YOUR EXPERIENCE
+</div>
+
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            AMITYS
+            <small>PERFUMES & BEAUTY</small>
+        </a>
+
+        <a href="index.html#collection" class="back-link">
+            ← CONTINUE SHOPPING
+        </a>
+    </div>
+</header>
+
+<main>
+<div class="container">
+
+    <div class="heading">
+        <span class="eyebrow">ALMOST YOURS</span>
+        <h1>Checkout.</h1>
+        <p>
+            Enter your details, review your order and send
+            your request directly to AMITYS.
+        </p>
+    </div>
+
+    <form id="checkout-form">
+
+        <h2>Your details</h2>
+
+        <div class="grid">
+            <div class="field">
+                <label for="customer-name">Full name *</label>
+                <input id="customer-name" name="customerName"
+                       autocomplete="name" required>
+            </div>
+
+            <div class="field">
+                <label for="customer-phone">Phone number *</label>
+                <input id="customer-phone" name="customerPhone"
+                       type="tel" autocomplete="tel" required>
+            </div>
+
+            <div class="field full">
+                <label for="customer-email">Email address (optional)</label>
+                <input id="customer-email" name="customerEmail"
+                       type="email" autocomplete="email">
+            </div>
+        </div>
+
+        <h2>Delivery or collection</h2>
+
+        <div class="choices">
+            <label class="choice">
+                <input type="radio" name="fulfilment"
+                       value="Collection" checked>
+                <span>
+                    <strong>Collection</strong>
+                    <small>
+                        Collection arrangements will be confirmed
+                        directly with AMITYS.
+                    </small>
+                </span>
+            </label>
+
+            <label class="choice">
+                <input type="radio" name="fulfilment"
+                       value="Delivery">
+                <span>
+                    <strong>Delivery</strong>
+                    <small>
+                        Delivery availability and costs must
+                        be confirmed by AMITYS.
+                    </small>
+                </span>
+            </label>
+        </div>
+
+        <div id="delivery-fields" hidden>
+            <h2>Delivery address</h2>
+
+            <div class="grid">
+                <div class="field full">
+                    <label for="address">Street address *</label>
+                    <input id="address" name="address"
+                           autocomplete="street-address">
+                </div>
+
+                <div class="field">
+                    <label for="suburb">Suburb *</label>
+                    <input id="suburb" name="suburb">
+                </div>
+
+                <div class="field">
+                    <label for="city">City or town *</label>
+                    <input id="city" name="city"
+                           autocomplete="address-level2">
+                </div>
+
+                <div class="field">
+                    <label for="province">Province *</label>
+                    <select id="province" name="province">
+                        <option value="">Choose province</option>
+                        <option>Eastern Cape</option>
+                        <option>Free State</option>
+                        <option>Gauteng</option>
+                        <option>KwaZulu-Natal</option>
+                        <option>Limpopo</option>
+                        <option>Mpumalanga</option>
+                        <option>Northern Cape</option>
+                        <option>North West</option>
+                        <option>Western Cape</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="postal">Postal code *</label>
+                    <input id="postal" name="postal"
+                           autocomplete="postal-code">
+                </div>
+            </div>
+        </div>
+
+        <div class="notice">
+            <strong>Please note:</strong> This website does not
+            take online payments. AMITYS must confirm availability,
+            delivery or collection arrangements, delivery costs,
+            the final total and payment details before accepting
+            your order.
+        </div>
+
+        <div class="field">
+            <label for="notes">Additional notes (optional)</label>
+            <textarea id="notes" name="notes"
+                      placeholder="Anything else AMITYS should know?"></textarea>
+        </div>
+
+        <div class="summary">
+            <h2>Your order</h2>
+
+            <div id="order-items"></div>
+
+            <div class="summary-total">
+                <span>Subtotal</span>
+                <span id="subtotal">R0.00</span>
+            </div>
+
+            <p class="small-note">
+                Delivery charges are not included in the subtotal.
+            </p>
+        </div>
+
+        <div class="actions">
+            <button type="button" class="whatsapp"
+                    id="whatsapp-order">
+                ORDER VIA WHATSAPP
+            </button>
+
+            <button type="button" class="email"
+                    id="email-order">
+                ORDER VIA EMAIL
+            </button>
+        </div>
+
+        <p id="status" role="status" aria-live="polite"></p>
+
+        <p class="small-note">
+            Sending an order request does not mean the order is
+            confirmed. AMITYS will contact you to confirm the details.
+        </p>
+
+    </form>
+</div>
+</main>
+
+<footer>
+    <div class="container">
+        AMITYS PERFUME & BEAUTY<br>
+        <a href="mailto:rosemaryruvengo29@gmail.com">
+            rosemaryruvengo29@gmail.com
+        </a><br>
+        &copy; <span id="year"></span> AMITYS PERFUME.
+    </div>
+</footer>
+
+<script>
+const CART_KEY = "amitysPerfumeCart";
+const BUSINESS_PHONE = "27642084489";
+const BUSINESS_EMAIL = "rosemaryruvengo29@gmail.com";
+
+const form = document.getElementById("checkout-form");
+const itemsBox = document.getElementById("order-items");
+const subtotalBox = document.getElementById("subtotal");
+const statusBox = document.getElementById("status");
+
+let cart = [];
+
+try {
+    cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+} catch (error) {
+    cart = [];
+}
+
+function money(amount) {
+    return "R" + Number(amount).toFixed(2);
+}
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[character]);
+}
+
+function getSubtotal() {
+    return cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+    );
+}
+
+function renderOrder() {
+    if (!cart.length) {
+        itemsBox.innerHTML = `
+            <p class="small-note">
+                Your bag is empty. Return to the collection
+                and add a product before checking out.
+            </p>
+        `;
+
+        subtotalBox.textContent = money(0);
+        document.getElementById("whatsapp-order").disabled = true;
+        document.getElementById("email-order").disabled = true;
+        return;
+    }
+
+    itemsBox.innerHTML = cart.map(item => `
+        <div class="summary-item">
+            <span>
+                ${escapeHTML(item.name)} × ${Number(item.quantity)}
+            </span>
+            <strong>
+                ${money(item.price * item.quantity)}
+            </strong>
+        </div>
+    `).join("");
+
+    subtotalBox.textContent = money(getSubtotal());
+
+    document.getElementById("whatsapp-order").disabled = false;
+    document.getElementById("email-order").disabled = false;
+}
+
+function getFormData() {
+    if (!form.reportValidity()) return null;
+
+    if (!cart.length) {
+        statusBox.textContent =
+            "Your shopping bag is empty. Please return to the collection.";
+        return null;
+    }
+
+    const data = new FormData(form);
+
+    const details = {
+        name: data.get("customerName").trim(),
+        phone: data.get("customerPhone").trim(),
+        email: data.get("customerEmail").trim(),
+        fulfilment: data.get("fulfilment"),
+        address: data.get("address") || "",
+        suburb: data.get("suburb") || "",
+        city: data.get("city") || "",
+        province: data.get("province") || "",
+        postal: data.get("postal") || "",
+        notes: data.get("notes").trim()
+    };
+
+    if (details.fulfilment === "Delivery") {
+        const requiredAddress = [
+            ["address", "Street address"],
+            ["suburb", "Suburb"],
+            ["city", "City or town"],
+            ["province", "Province"],
+            ["postal", "Postal code"]
+        ];
+
+        for (const [key, label] of requiredAddress) {
+            if (!details[key].trim()) {
+                statusBox.textContent =
+                    "Please enter your " + label.toLowerCase() + ".";
+                document.getElementById(key).focus();
+                return null;
+            }
+        }
+    }
+
+    return details;
+}
+
+function buildOrderMessage(details) {
+    const productLines = cart.map(item =>
+        "- " + item.name +
+        " x " + item.quantity +
+        " = " + money(item.price * item.quantity)
+    );
+
+    const address = details.fulfilment === "Delivery"
+        ? "\nDelivery address: " + details.address +
+          ", " + details.suburb +
+          ", " + details.city +
+          ", " + details.province +
+          ", " + details.postal
+        : "";
+
+    return [
+        "AMITYS PERFUME - NEW ORDER REQUEST",
+        "",
+        "CUSTOMER DETAILS",
+        "Name: " + details.name,
+        "Phone: " + details.phone,
+        "Email: " + (details.email || "Not provided"),
+        "",
+        "ORDER",
+        ...productLines,
+        "",
+        "Subtotal: " + money(getSubtotal()),
+        "Fulfilment: " + details.fulfilment,
+        address,
+        "",
+        "Notes: " + (details.notes || "None"),
+        "",
+        "Please confirm product availability, delivery or collection,",
+        "final total and payment details."
+    ].join("\n");
+}
+
+document.querySelectorAll('input[name="fulfilment"]').forEach(input => {
+    input.addEventListener("change", () => {
+        const isDelivery =
+            document.querySelector('input[name="fulfilment"]:checked').value
+            === "Delivery";
+
+        const deliveryFields =
+            document.getElementById("delivery-fields");
+
+        deliveryFields.hidden = !isDelivery;
+
+        [
+            "address",
+            "suburb",
+            "city",
+            "province",
+            "postal"
+        ].forEach(id => {
+            document.getElementById(id).required = isDelivery;
+        });
+    });
+});
+
+document.getElementById("whatsapp-order").addEventListener("click", () => {
+    const details = getFormData();
+
+    if (!details) return;
+
+    const message = buildOrderMessage(details);
+
+    const url = "https://wa.me/" + BUSINESS_PHONE +
+                "?text=" + encodeURIComponent(message);
+
+    statusBox.textContent =
+        "Opening WhatsApp with your order request. Please review it and press Send.";
+
+    window.open(url, "_blank", "noopener");
+});
+
+document.getElementById("email-order").addEventListener("click", () => {
+    const details = getFormData();
+
+    if (!details) return;
+
+    const message = buildOrderMessage(details);
+
+    const subject = "AMITYS PERFUME - Order Request";
+
+    const url = "mailto:" + BUSINESS_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(message);
+
+    statusBox.textContent =
+        "Opening your email application with your order request. Please review it and press Send.";
+
+    window.location.href = url;
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderOrder();
+</script>
+
+</body>
+</html>
